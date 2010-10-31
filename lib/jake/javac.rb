@@ -17,6 +17,16 @@ class Javac < JavaTask
     end
 
     FileUtils.mkdir_p(@output) unless File.exist? @output
-      "javac " + @src.join(' ').to_s + " -cp " + classpath.join(':').to_s + " -d " + @output
+      "javac " + @src.join(' ').to_s + " -cp " + classpath.join(cp_separator).to_s + " -d " + @output
+  end
+
+  private
+
+  def cp_separator
+    if RUBY_PLATFORM =~ /(win|w)32$/
+      ';'
+    else
+      ':'
+    end
   end
 end
