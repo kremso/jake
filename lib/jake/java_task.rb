@@ -27,4 +27,12 @@ class JavaTask
     sh command unless command.nil?
     Dir.chdir(original_path)
   end
+
+  def cp_separator
+    if RUBY_PLATFORM =~ /(win|w)32$/
+      ';'
+    else
+      ':'
+    end
+  end
 end

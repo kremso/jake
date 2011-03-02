@@ -25,14 +25,5 @@ class Ajc < JavaTask
 
     "ajc -cp " + classpath.join(cp_separator).to_s + " -inpath " + inpath_arr.join(cp_separator).to_s + " -outjar " + @outjar + " -1.5 "  + @src.join(' ').to_s
   end
-
-  private
-
-  def cp_separator
-    if RUBY_PLATFORM =~ /(win|w)32$/
-      ';'
-    else
-      ':'
-    end
-  end
+	
 end

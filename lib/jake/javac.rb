@@ -20,13 +20,4 @@ class Javac < JavaTask
       "javac " + @src.join(' ').to_s + " -cp " + classpath.join(cp_separator).to_s + " -d " + @output
   end
 
-  private
-
-  def cp_separator
-    if RUBY_PLATFORM =~ /(win|w)32$/
-      ';'
-    else
-      ':'
-    end
-  end
 end
