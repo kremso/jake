@@ -8,7 +8,7 @@ spec = Gem::Specification.new do |s|
   s.name = %q{javajake}
   s.version = Jake::VERSION
 
-  s.authors = ["Tomas Kramar"]
+  s.authors = ["Tomas Kramar","Ivan Plesko"]
   s.description = %q{Build java code with ease.}
   s.email = %q{kramar@fiit.stuba.sk}
   s.files = Dir.glob('lib/**/*.rb') + %w{Rakefile}
